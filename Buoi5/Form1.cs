@@ -34,9 +34,22 @@ namespace Buoi5
             }
         }
 
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+            if (toolStripComboBox1.SelectedItem != null && !string.IsNullOrEmpty(toolStripComboBox2.Text))
+            {
+                string fontName = toolStripComboBox1.SelectedItem.ToString();
+                float fontSize = float.Parse(toolStripComboBox2.Text);
+                richTextBox1.Font = new Font(fontName, fontSize);
+            }
+        }
+        
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-
+            richTextBox1.Clear();
+            toolStripComboBox1.Text = "Tahoma";
+            toolStripComboBox2.Text = "14";
+            richTextBox1.Font = new Font("Tahoma", 14);
         }
 
         private void toolStripComboBox1_Click(object sender, EventArgs e)
